@@ -1,0 +1,106 @@
+// 首页的样式less文件
+// 将common.less 导入进来 @import 导入 可以把一个样式文件导入到另一个样式文件  后缀名可以省略
+//Link 是把一个样式文件引入到html 文件中
+@import "common.less";
+// 给body 设置样式
+// 因为是相对于 750px  他是将屏幕分成了15分 因此我们所有的页面尺寸均分成15分  就可以实现等比例
+body{
+    min-width: 320px;
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background-color: #f2f2f2;
+    height: 1500px;
+
+}
+//页面元素rem 计算公式 ：页面元素的px / html字体的大小 50
+@baseFont:50px;
+.search-content{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);  //固定定位的盒子 不能使用margin：0 auto;  我们要通过定位来实现
+    width: 15rem;
+    height: 88rem / @baseFont;
+    // 可千万不要设置行高 如果设置行高 input中的文字 就会居中（相对于父盒子） 那么就会引起 输入框塌陷
+    background-color: #ffc001;
+    .classify{
+        width: 44rem / @baseFont;
+        height: 70rem / @baseFont;
+        margin: 11rem /@baseFont 25rem/ @baseFont 7rem /@baseFont 24rem / @baseFont;
+        //将图片作为 背景 或者 放入都可以
+        // background: url(../images/classify.png) no-repeat;
+        // background-size: 44rem / @baseFont  70rem / @baseFont;
+        img{
+              width: 100%;
+        }
+    }
+    .search{
+        flex: 1;
+        input{
+            outline: none;
+            width: 100%;
+            height: 66rem / @baseFont;
+            border: none;
+            border-radius: 33rem / @baseFont;
+            font-size: 25rem / @baseFont;
+            padding-left: 55rem / @baseFont;
+            background-color: #fff2cc;
+            color: #757575;
+        }
+    }
+    .login{
+        width: 75rem / @baseFont;
+        height: 70rem / @baseFont;
+        line-height: 70rem / @baseFont;
+        margin: 10rem / @baseFont;
+        text-align: center;
+        font-size: 25rem / @baseFont;
+        color: #fff;
+        
+    }
+    
+}
+.banner{
+    width: 750rem / @baseFont;
+    height: 368rem / @baseFont;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+// 广告部分
+.advister{
+   display: flex;
+   a{
+       flex: 1;
+       img{
+           width: 100%;
+       }
+   }
+}
+nav{
+    width: 750rem / @baseFont;
+    a{
+        float: left;
+        width: 150rem / @baseFont;
+        height: 140rem / @baseFont;
+        margin-bottom: 10rem / @baseFont;
+        text-align: center;
+        img{
+            //图片是 行内元素  必须转换为块级元素 才能居中
+            display: block;
+            width:  82rem / @baseFont;
+            height: 82rem / @baseFont;
+            margin: 10rem / @baseFont auto 0;
+        }
+        span{
+            font-size: 25rem / @baseFont;
+            color: #333;
+        }
+        
+    }
+}
+ 

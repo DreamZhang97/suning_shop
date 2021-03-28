@@ -1,0 +1,129 @@
+body {
+    min-width: 320px;
+    max-width: 750px;
+    /* flexible 给我们划分了 10 等份 width: 10rem; 
+      flexible 是相对于当前屏幕给我们划分的 大小
+    */
+    width: 10rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background: #f2f2f2;
+}
+
+
+/* 如果我们的屏幕 超过了 750px  那么我们就按照750px的设计稿来走 不会让我们的页面超过750px 强制性将html 修改大小
+    
+*/
+
+@media screen and (min-width:750px) {
+    html {
+        /* 提高权重  要不然权重没有 默认的高 */
+        font-size: 75px !important;
+    }
+}
+
+a {
+    text-decoration: none;
+    font-size: 0.333333rem;
+}
+
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 1.173333rem;
+    background-color: #ffc001;
+}
+
+.classify {
+    width: 0.586667rem;
+    height: 0.933333rem;
+    margin: 0.146667rem 0.333333rem 0.133333rem;
+}
+
+.classify img {
+    width: 100%;
+}
+
+.search {
+    flex: 1;
+}
+
+.search input {
+    outline: none;
+    width: 100%;
+    height: 0.88rem;
+    border: none;
+    border-radius: 0.44rem;
+    margin-top: 0.133333rem;
+    padding-left: 0.733333rem;
+    font-size: 0.333333rem;
+    color: #757575;
+    background-color: #fff2cc;
+}
+
+.login {
+    width: 1rem;
+    height: 0.933333rem;
+    line-height: 0.933333rem;
+    margin: 0.133333rem;
+    text-align: center;
+    color: #fff;
+}
+
+.banner {
+    width: 100%;
+    /* 这里需要指定高度  不然图片会和上方有空隙 */
+    height: 4.906667rem;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.advister {
+    display: flex;
+}
+
+.advister a {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.advister a img {
+    width: 100%;
+}
+
+
+/* nav部分 */
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.066667rem;
+}
+
+nav a {
+    flex: 20%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #000;
+}
+
+nav a img {
+    flex: 1;
+    width: 1.133333rem;
+    height: 1.133333rem;
+    padding: 0.066667rem 0.333333rem 0 0.4rem;
+}
+
+nav a span {
+    flex: 1;
+}
